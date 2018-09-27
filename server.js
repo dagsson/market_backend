@@ -1,6 +1,9 @@
-const express = require('express');
+var express = require('express');
+var routes = require('./routes.js');
 var app = express();
-app.get('/', (req, res) => {
-    res.send('Hello Express')
-});
-app.listen(process.env.PORT || 3000)
+
+routes(app);
+
+var server = app.listen(3000, function(){
+    console.log("app running on port." , server.address().port);
+})
