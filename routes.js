@@ -1,8 +1,8 @@
 var request = require('request');
 var session = require('express-session');
 var appRouter = function (app) {
-//var path = "http://172.16.192.122:3000/api"
-var path = "https://blockchain.advania.is/api"
+var path = "http://172.16.192.122:3000/api"
+//var path = "https://blockchain.advania.is/api"
 
 app.use(session({
   secret: "testx",
@@ -50,6 +50,28 @@ app.use(session({
     //Sækja frá api
     var response = request({
       url: path+ "/Carcass/?access_token="+req.session.id
+    }, function(error, response, body){
+      res.status(200).send(body);
+    })
+  });
+
+
+  app.get("/Lamb", function(req,res){
+
+    //req.params.id
+    //Er til session key?
+    console.log(req.session);
+    if(!req.session.id)
+    {
+      //Ef ekki, login og store session key
+      console.log("session does not exist!"+userSession.secret);
+      var token = login();
+      req.session.id = token;
+    }
+
+    //Sækja frá api
+    var response = request({
+      url: path+ "/Lamb/?access_token="+req.session.id
     }, function(error, response, body){
       res.status(200).send(body);
     })
