@@ -1,8 +1,8 @@
 var request = require('request');
 var session = require('express-session');
 var appRouter = function (app) {
-var path = "http://172.16.192.122:3000/api"
-//var path = "https://blockchain.advania.is/api"
+//var path = "http://172.16.192.122:3000/api"
+var path = "https://blockchain.advania.is/api"
 
 app.use(session({
   secret: "testx",
