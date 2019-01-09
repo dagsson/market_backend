@@ -1,4 +1,4 @@
 # Node Modules og eiga ekki ad koma með yfir á server. node_modules er sótt þar.
-node_modules
+node_modules/*
 .DS_Store
 
