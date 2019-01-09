@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 var options = {
     user: process.env.MONGO_INITDB_ROOT_USERNAME,
     pass: process.env.MONGO_INITDB_ROOT_PASSWORD,
-    useMongoClient: true
+    useNewUrlParser: true
 };
 mongoose.Promise = Promise;
 mongoose.connect('mongodb://localhost:27017/farmdb?authSource=admin');
