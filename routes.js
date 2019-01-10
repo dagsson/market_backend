@@ -12,6 +12,10 @@ app.use(session({
     res.status(200).send({ message: 'Welcome to our restful API' });
   });
 
+  app.get("/mongotest", function (req, res) {
+    res.status(200).send({ message: 'Welcome to our restful API' });
+  });
+
   app.get("/Farmer", function(req,res){
 
     //req.params.id

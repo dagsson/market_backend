@@ -17,7 +17,7 @@ var options = {
     useNewUrlParser: true
 };
 mongoose.Promise = Promise;
-mongoose.connect('mongodb://localhost:27017/farmdb?authSource=admin');
+mongoose.connect('mongodb://localhost:27017/test?authSource=admin', options);
 
 const connection = mongoose.connection;
 
